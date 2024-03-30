@@ -41,7 +41,9 @@ class Fabriek extends OefeningFactory
 		$linkerlid 	= color('blue',$kgv.'.')."(\\frac{".$x."}{".$a."}" .p($t,0) . $bc . ")";
 		$rechterlid	= "(".$de.$x . p($f,2).")".color('blue','.'.$kgv);
 		$oplossing 	.= "\\begin{align} & ". $linkerlid ."& = & " .$rechterlid. " \\\\";
-		//Distributiviteit, breuken vallen wel YES!
+		//Distributiviteit, breuken vallen weg YES!
+		//ToDo Tussenstap waarbij kgv wordt vermenigvuldigd met elke breuk, hierna mogen de breuken pas wegvallen
+		
 		//rx + s = ux + v
 		$xa = new R($kgv, $a); $xa->haakjes(False); $xa->vereenvoudig();
 		$r  = $xa->teller;
